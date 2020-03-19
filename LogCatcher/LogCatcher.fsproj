@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RunPostBuildEvent>0</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="LogEntry.fs" />
+    <Compile Include="LogEntries.fs" />
+    <Compile Include="State.fs" />
+    <Compile Include="LogCatcher.fs" />
+    <Compile Include="Ui.fs" />
+    <Compile Include="SettingsWindow.fs" />
+    <Compile Include="MainWindow.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Deploy.fsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>..\External\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\External\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
