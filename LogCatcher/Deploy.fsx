@@ -1,3 +1,5 @@
+#r "FSharp.Compiler.Interactive.Settings.dll"
+
 open System.IO
 
 printfn "%s" "Copying output"
@@ -22,10 +24,9 @@ let copyBinaries targetDir =
     ("FSharp.Core.dll", sprintf "%sExternal/" solutionRoot);
   ]
 
-  List.map (fun (file, origin) ->
+  List.map ((fun (file, origin) ->
     fullOriginAndDestinationPath file origin targetDir
-  ) binarySettings
-  |> List.map copyBinary
+  ) >> copyBinary) binarySettings
   |> ignore
 
 match fsi.CommandLineArgs with
