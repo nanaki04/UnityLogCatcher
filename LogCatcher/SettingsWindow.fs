@@ -10,10 +10,14 @@ module SettingsWindow =
     inherit EditorWindow ()
 
     member self.OnGUI () =
-      Debug.Log("spinning settings window")
       State.load ()
       |> Ui.input "Server ip adress:" State.ip State.withIp
       |> Ui.intInput "Server port:" State.port State.withPort
+      |> Ui.button "Ok" (fun state ->
+        State.persist state
+        self.Close ()
+        state
+      )
       |> State.save
 
   let openWindow state =

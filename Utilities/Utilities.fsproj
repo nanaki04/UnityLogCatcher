@@ -1,14 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="IpAddress.fs" />
     <Compile Include="Port.fs" />
     <Compile Include="ServerAddress.fs" />
+    <Compile Include="TcpConnection.fs" />
     <Compile Include="Utility.fs" />
   </ItemGroup>
-
 </Project>

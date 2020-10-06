@@ -15,7 +15,7 @@ let fullOriginAndDestinationPath file origin destination =
   (fullPath file origin, fullPath file destination)
 
 let copyBinaries targetDir =
-  let releaseDir = Path.GetFullPath ("bin/Release/netcoreapp3.1/")
+  let releaseDir = Path.GetFullPath ("bin/Release/netstandard2.0/")
   let solutionRoot = Path.GetFullPath ("../")
 
   let binarySettings = [
